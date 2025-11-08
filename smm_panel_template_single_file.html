@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MotherPanel — Exact Replica Template (Demo)</title>
+  <meta name="description" content="Replica of motherpanel.com style SMM panel — demo template" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Reset + variables */
+    :root{
+      --bg:#0f1724; --card:#071029; --panel:#0b1220; --muted:#9aa8b8; --accent:#06b6d4; --accent-2:#7c3aed; --glass:rgba(255,255,255,0.03);
+      --radius:12px; --shadow: 0 6px 18px rgba(2,6,23,0.6);
+    }
+    *{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#041025 0%, #071428 100%);color:#e6eef6}
+    a{color:inherit;text-decoration:none}
+
+    /* container */
+    .wrap{max-width:1200px;margin:28px auto;padding:18px}
+
+    /* header (like motherpanel) */
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#021025}
+    .brand h1{margin:0;font-size:18px}
+    .nav{display:flex;gap:8px;align-items:center}
+    .nav a{padding:8px 12px;border-radius:10px;color:var(--muted)}
+    .nav a.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021025;font-weight:700}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:18px;margin-top:22px}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:28px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:var(--shadow)}
+    .hero h2{margin:0;font-size:28px}
+    .hero p{color:var(--muted);margin-top:8px}
+    .features{display:flex;gap:12px;margin-top:16px}
+    .feature{background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;text-align:center;flex:1}
+    .cta-row{display:flex;gap:10px;margin-top:18px}
+
+    /* order form panel */
+    .order-panel{background:linear-gradient(180deg,#061126, #071428);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+    .order-panel label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    .input,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    .place-btn{margin-top:10px;padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021025;font-weight:800;cursor:pointer}
+
+    /* services grid */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .service{background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .service h4{margin:0}
+    .service .meta{color:var(--muted);font-size:13px;margin-top:6px}
+
+    /* table for orders */
+    .card{background:var(--panel);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);margin-top:18px}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:10px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.03);font-size:14px}
+    th{color:var(--muted);font-weight:600}
+
+    /* footer */
+    footer{margin-top:22px;text-align:center;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .services{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:620px){
+      .services{grid-template-columns:1fr}
+      .nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <h1>MotherPanel</h1>
+          <div style="color:var(--muted);font-size:13px">SMM panel — demo replica</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#docs">Docs</a>
+        <a class="primary" href="#order">Order Now</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h2>Fast. Reliable. Affordable SMM Services</h2>
+        <p>Place orders, manage services and integrate via API — all in one clean dashboard inspired by MotherPanel.</p>
+
+        <div class="features">
+          <div class="feature">
+            <div style="font-weight:700">Instant Delivery</div>
+            <div class="meta">Auto & manual services</div>
+          </div>
+          <div class="feature">
+            <div style="font-weight:700">API Access</div>
+            <div class="meta">Simple REST API</div>
+          </div>
+          <div class="feature">
+            <div style="font-weight:700">24/7 Support</div>
+            <div class="meta">Live chat & tickets</div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="place-btn" href="#order">Place Order</a>
+          <a class="place-btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)">View Docs</a>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3 style="margin:0">Recent Orders</h3>
+          <table>
+            <thead><tr><th>#</th><th>User</th><th>Service</th><th>Qty</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>#1023</td><td>jamal</td><td>Instagram Likes</td><td>500</td><td style="color:#10b981">Completed</td></tr>
+              <tr><td>#1024</td><td>mina</td><td>YouTube Views</td><td>1000</td><td style="color:var(--accent)">Processing</td></tr>
+              <tr><td>#1025</td><td>rafi</td><td>Facebook Shares</td><td>200</td><td style="color:#ef4444">Failed</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <aside class="order-panel" id="order">
+        <h3 style="margin:0">Quick Order</h3>
+        <label>Service</label>
+        <select class="input">
+          <option value="101">Instagram Likes — 101</option>
+          <option value="102">Instagram Followers — 102</option>
+          <option value="201">YouTube Views — 201</option>
+          <option value="301">TikTok Followers — 301</option>
+        </select>
+
+        <label style="margin-top:8px">Target (username/post link)</label>
+        <input class="input" placeholder="Enter username or link" />
+
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <input class="input" placeholder="Quantity" />
+          <input class="input" placeholder="Runs / Speed (opt)" />
+        </div>
+
+        <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:10px">
+          <div style="font-size:13px;color:var(--muted)">Price/1k <strong>$1.50</strong></div>
+          <button class="place-btn">Place Order</button>
+        </div>
+
+        <div style="margin-top:12px;color:var(--muted);font-size:13px">Need help? <a href="mailto:support@motherpanel-demo.com">support@motherpanel-demo.com</a></div>
+      </aside>
+    </section>
+
+    <section id="services" class="services">
+      <div class="service">
+        <h4>Instagram Likes</h4>
+        <div class="meta">Delivery: 1-24h • Min 50</div>
+        <div style="margin-top:8px;font-weight:700">$0.90 / 1k</div>
+      </div>
+      <div class="service">
+        <h4>Instagram Followers</h4>
+        <div class="meta">Delivery: 12-48h • Min 50</div>
+        <div style="margin-top:8px;font-weight:700">$2.50 / 1k</div>
+      </div>
+      <div class="service">
+        <h4>YouTube Views</h4>
+        <div class="meta">Delivery: Instant • Min 100</div>
+        <div style="margin-top:8px;font-weight:700">$2.10 / 1k</div>
+      </div>
+      <div class="service">
+        <h4>TikTok Followers</h4>
+        <div class="meta">Delivery: 12-48h • Min 50</div>
+        <div style="margin-top:8px;font-weight:700">$3.50 / 1k</div>
+      </div>
+      <div class="service">
+        <h4>Facebook Shares</h4>
+        <div class="meta">Delivery: 1-24h • Min 50</div>
+        <div style="margin-top:8px;font-weight:700">$1.20 / 1k</div>
+      </div>
+      <div class="service">
+        <h4>Twitch Followers</h4>
+        <div class="meta">Delivery: 12-48h • Min 25</div>
+        <div style="margin-top:8px;font-weight:700">$4.00 / 1k</div>
+      </div>
+    </section>
+
+    <section id="pricing" class="card">
+      <h3 style="margin:0">Pricing Plans</h3>
+      <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px;padding:12px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)">
+          <div style="font-weight:700">Starter</div>
+          <div style="color:var(--muted)">For small users</div>
+          <div style="font-size:20px;font-weight:800;margin-top:8px">$10 / mo</div>
+          <div style="margin-top:8px"><button class="place-btn" style="width:100%">Choose</button></div>
+        </div>
+        <div style="flex:1;min-width:220px;padding:12px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021025">
+          <div style="font-weight:700">Pro</div>
+          <div style="color:rgba(2,6,23,0.6)">Popular</div>
+          <div style="font-size:20px;font-weight:800;margin-top:8px">$29 / mo</div>
+          <div style="margin-top:8px"><button class="place-btn" style="width:100%">Choose</button></div>
+        </div>
+        <div style="flex:1;min-width:220px;padding:12px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)">
+          <div style="font-weight:700">Agency</div>
+          <div style="color:var(--muted)">For resellers</div>
+          <div style="font-size:20px;font-weight:800;margin-top:8px">$79 / mo</div>
+          <div style="margin-top:8px"><button class="place-btn" style="width:100%">Choose</button></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="color:var(--muted)">© 2025 MotherPanel Replica — demo only. This template is for development & learning purposes.</div>
+    </footer>
+  </div>
+</body>
+</html>
